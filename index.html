@@ -1,0 +1,946 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Latihan Soal TOEFL — Soal, Jawaban &amp; Pembahasan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #f6f3ec;
+        --surface: #fffdf8;
+        --surface-2: #efe9dc;
+        --ink: #1e2422;
+        --muted: #5d665f;
+        --line: #ddd5c4;
+        --accent: #0d5c46;
+        --accent-deep: #084434;
+        --accent-ink: #ffffff;
+        --gold: #a96f14;
+        --good: #14663c;
+        --good-bg: #e3f2e6;
+        --bad: #b02318;
+        --bad-bg: #fae9e6;
+        --warn-bg: #fbf0d9;
+        --shadow: 0 10px 30px rgba(30, 36, 34, 0.08);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #121614;
+          --surface: #1b201d;
+          --surface-2: #232a26;
+          --ink: #ece9e0;
+          --muted: #a3aea5;
+          --line: #2e362f;
+          --accent: #3cb48d;
+          --accent-deep: #8fd8bf;
+          --accent-ink: #0b1512;
+          --gold: #d9a441;
+          --good: #6fce8f;
+          --good-bg: #17301f;
+          --bad: #ff9d92;
+          --bad-bg: #3a1d19;
+          --warn-bg: #33280f;
+          --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "IBM Plex Sans", system-ui, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap { max-width: 900px; margin: 0 auto; padding: 0 20px 72px; }
+
+      /* ---------- Hero ---------- */
+      .hero { padding: 44px 0 8px; }
+      .hero .kicker {
+        display: inline-block;
+        font-size: 12.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+        color: var(--accent); border: 1px solid var(--accent); border-radius: 999px;
+        padding: 4px 12px; margin-bottom: 18px;
+      }
+      .hero h1 {
+        font-family: "Spectral", Georgia, serif;
+        font-size: clamp(34px, 6vw, 52px); line-height: 1.12; font-weight: 700;
+        margin: 0 0 14px; letter-spacing: -0.01em;
+      }
+      .hero p.lede { font-size: 17.5px; color: var(--muted); margin: 0 0 22px; max-width: 640px; }
+      .facts { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 8px; }
+      .fact {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+        padding: 8px 14px; font-size: 14px; font-weight: 600;
+      }
+      .fact span { color: var(--accent); font-weight: 700; }
+
+      /* ---------- Sections ---------- */
+      h2.section-title {
+        font-family: "Spectral", Georgia, serif; font-size: 26px; font-weight: 600;
+        margin: 40px 0 6px;
+      }
+      .section-sub { color: var(--muted); margin: 0 0 20px; font-size: 15px; }
+      .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      @media (max-width: 760px) { .cards { grid-template-columns: 1fr; } }
+      .card {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+        padding: 22px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 8px;
+      }
+      .card .num {
+        font-family: "Spectral", Georgia, serif; font-size: 30px; font-weight: 700; color: var(--accent);
+        line-height: 1;
+      }
+      .card h3 { margin: 0; font-size: 18px; font-weight: 700; }
+      .card p { margin: 0; color: var(--muted); font-size: 14.5px; flex: 1; }
+      .card .meta { font-size: 13px; font-weight: 600; color: var(--gold); }
+      .btn {
+        appearance: none; border: 0; cursor: pointer; font: inherit; font-weight: 600;
+        background: var(--accent); color: var(--accent-ink); border-radius: 10px;
+        padding: 11px 18px; font-size: 15px; text-align: center;
+        transition: transform 0.12s ease, background 0.12s ease;
+      }
+      .btn:hover { transform: translateY(-1px); }
+      .btn:active { transform: translateY(0); }
+      .btn.secondary { background: var(--surface-2); color: var(--ink); border: 1px solid var(--line); }
+      .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+      .btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+      .simulasi {
+        margin-top: 16px; background: var(--accent); color: #fff; border-radius: 14px;
+        padding: 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px;
+        box-shadow: var(--shadow);
+      }
+      @media (prefers-color-scheme: dark) { .simulasi { color: #0b1512; } }
+      .simulasi .txt { flex: 1 1 320px; }
+      .simulasi h3 { margin: 0 0 4px; font-size: 20px; font-family: "Spectral", Georgia, serif; }
+      .simulasi p { margin: 0; opacity: 0.85; font-size: 14.5px; }
+      .simulasi .btn { background: #fff; color: var(--accent-deep); }
+      @media (prefers-color-scheme: dark) { .simulasi .btn { background: #0b1512; color: var(--accent); } }
+
+      /* ---------- Tips ---------- */
+      .tips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      @media (max-width: 760px) { .tips { grid-template-columns: 1fr; } }
+      .tip { border-top: 3px solid var(--gold); padding-top: 12px; }
+      .tip h4 { margin: 0 0 6px; font-size: 15.5px; }
+      .tip p { margin: 0; font-size: 14.5px; color: var(--muted); }
+
+      /* ---------- Quiz ---------- */
+      .quiz-head {
+        display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 36px 0 14px;
+      }
+      .quiz-head .where { font-weight: 700; font-size: 15px; }
+      .quiz-head .count { color: var(--muted); font-size: 14px; }
+      .quiz-head .spacer { flex: 1; }
+      .progress { height: 8px; background: var(--surface-2); border-radius: 999px; overflow: hidden; margin-bottom: 22px; }
+      .progress > div { height: 100%; background: var(--accent); border-radius: 999px; transition: width 0.3s ease; }
+      .qcard {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+        padding: 26px; box-shadow: var(--shadow);
+      }
+      .passage {
+        background: var(--surface-2); border-radius: 12px; padding: 18px 20px; margin-bottom: 20px;
+        font-size: 15.5px;
+      }
+      .passage .passage-title { font-family: "Spectral", Georgia, serif; font-weight: 700; font-size: 16.5px; margin-bottom: 6px; }
+      .passage p { margin: 0 0 10px; }
+      .passage p:last-child { margin-bottom: 0; }
+      .audio-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+      .audio-note { font-size: 13.5px; color: var(--muted); }
+      .transcript {
+        display: none; border-left: 3px solid var(--gold); background: var(--warn-bg);
+        border-radius: 0 10px 10px 0; padding: 12px 16px; margin-bottom: 18px; font-size: 15px;
+      }
+      .transcript.show { display: block; }
+      .transcript strong { display: block; font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; color: var(--gold); }
+      .qtext { font-size: 18px; font-weight: 600; margin: 0 0 6px; line-height: 1.5; }
+      .qtext .blank { border-bottom: 2px solid var(--accent); padding: 0 18px; }
+      .qsub { color: var(--muted); font-size: 14px; margin: 0 0 16px; }
+      .options { display: flex; flex-direction: column; gap: 10px; margin-top: 14px; }
+      .opt {
+        display: flex; gap: 12px; align-items: flex-start; text-align: left; width: 100%;
+        background: var(--surface); border: 1.5px solid var(--line); border-radius: 12px;
+        padding: 13px 16px; font: inherit; font-size: 15.5px; cursor: pointer; color: var(--ink);
+        transition: border-color 0.12s ease, background 0.12s ease;
+      }
+      .opt:hover:not(:disabled) { border-color: var(--accent); }
+      .opt .letter {
+        flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%;
+        border: 1.5px solid var(--line); display: grid; place-items: center;
+        font-size: 13px; font-weight: 700; margin-top: 1px;
+      }
+      .opt.selected { border-color: var(--accent); background: var(--surface-2); }
+      .opt.selected .letter { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+      .opt.correct { border-color: var(--good); background: var(--good-bg); }
+      .opt.correct .letter { background: var(--good); color: #fff; border-color: var(--good); }
+      .opt.wrong { border-color: var(--bad); background: var(--bad-bg); }
+      .opt.wrong .letter { background: var(--bad); color: #fff; border-color: var(--bad); }
+      .opt:disabled { cursor: default; }
+      .feedback { display: none; margin-top: 18px; border-radius: 12px; padding: 16px 18px; font-size: 15px; }
+      .feedback.show { display: block; }
+      .feedback.ok { background: var(--good-bg); }
+      .feedback.no { background: var(--bad-bg); }
+      .feedback .verdict { font-weight: 700; margin-bottom: 4px; }
+      .feedback.ok .verdict { color: var(--good); }
+      .feedback.no .verdict { color: var(--bad); }
+      .feedback p { margin: 0; }
+      .quiz-nav { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+      .quiz-nav .spacer { flex: 1; }
+
+      /* ---------- Results ---------- */
+      .score-box {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+        padding: 30px; text-align: center; box-shadow: var(--shadow); margin-top: 36px;
+      }
+      .score-big { font-family: "Spectral", Georgia, serif; font-size: 58px; font-weight: 700; color: var(--accent); line-height: 1; }
+      .score-box p { color: var(--muted); margin: 10px 0 0; }
+      .breakdown { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+      .chip { background: var(--surface-2); border-radius: 999px; padding: 6px 14px; font-size: 13.5px; font-weight: 600; }
+      .review-item {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+        padding: 20px 22px; margin-top: 14px;
+      }
+      .review-item .rq { font-weight: 600; margin: 0 0 8px; font-size: 15.5px; }
+      .review-item .ra { font-size: 14.5px; margin: 3px 0; }
+      .review-item .ra .lbl { font-weight: 700; }
+      .review-item .ra.yours-wrong { color: var(--bad); }
+      .review-item .ra.right { color: var(--good); }
+      .review-item .rex { font-size: 14.5px; color: var(--muted); margin: 8px 0 0; }
+      .review-item .rsec { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+
+      footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 18px; color: var(--muted); font-size: 13.5px; }
+      .hidden { display: none !important; }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .btn, .progress > div { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+
+      <!-- ============ HOME ============ -->
+      <div id="view-home">
+        <header class="hero">
+          <span class="kicker">Bank Soal &amp; Pembahasan</span>
+          <h1>Latihan Soal TOEFL</h1>
+          <p class="lede">
+            Kumpulan soal latihan TOEFL campuran umum — Listening, Structure &amp; Written Expression,
+            dan Reading — lengkap dengan kunci jawaban dan penjelasan dalam Bahasa Indonesia.
+            Kerjakan per bagian untuk belajar santai, atau ambil simulasi campuran untuk menguji kesiapanmu.
+          </p>
+          <div class="facts">
+            <div class="fact"><span>30</span> soal latihan</div>
+            <div class="fact"><span>3</span> bagian tes</div>
+            <div class="fact"><span>100%</span> ada pembahasan</div>
+            <div class="fact">Audio listening via suara perangkat</div>
+          </div>
+        </header>
+
+        <h2 class="section-title">Latihan per bagian</h2>
+        <p class="section-sub">Mode latihan: jawaban langsung dicek dan pembahasannya muncul setelah kamu menjawab.</p>
+        <div class="cards">
+          <article class="card">
+            <div class="num">01</div>
+            <h3>Listening Comprehension</h3>
+            <p>Dengarkan percakapan dan pengumuman singkat berbahasa Inggris, lalu jawab pertanyaannya. Transkrip tersedia setelah menjawab.</p>
+            <div class="meta">8 soal &middot; percakapan &amp; pengumuman</div>
+            <button class="btn" data-start="listening">Mulai Listening</button>
+          </article>
+          <article class="card">
+            <div class="num">02</div>
+            <h3>Structure &amp; Written Expression</h3>
+            <p>Uji tata bahasa Inggris akademik: melengkapi kalimat dan menemukan bagian kalimat yang salah secara gramatikal.</p>
+            <div class="meta">12 soal &middot; grammar &amp; error analysis</div>
+            <button class="btn" data-start="structure">Mulai Structure</button>
+          </article>
+          <article class="card">
+            <div class="num">03</div>
+            <h3>Reading Comprehension</h3>
+            <p>Baca teks akademik pendek lalu jawab soal ide pokok, detail, kosakata, dan simpulan seperti pada tes sesungguhnya.</p>
+            <div class="meta">10 soal &middot; 2 bacaan</div>
+            <button class="btn" data-start="reading">Mulai Reading</button>
+          </article>
+        </div>
+
+        <div class="simulasi">
+          <div class="txt">
+            <h3>Simulasi Campuran — 30 Soal</h3>
+            <p>Semua soal dari ketiga bagian diacak jadi satu paket. Jawaban dan pembahasan baru muncul di akhir, seperti suasana tes betulan.</p>
+          </div>
+          <button class="btn" data-start="simulasi">Mulai Simulasi</button>
+        </div>
+
+        <h2 class="section-title">Tips singkat mengerjakan</h2>
+        <p class="section-sub">Tiga kebiasaan yang paling membantu di tiap bagian.</p>
+        <div class="tips">
+          <div class="tip">
+            <h4>Listening — tangkap kata kunci</h4>
+            <p>Fokus pada kalimat kedua pembicara; di situlah jawaban biasanya berada. Ungkapan seperti <em>had better</em>, <em>but</em>, dan <em>actually</em> sering mengubah arah percakapan.</p>
+          </div>
+          <div class="tip">
+            <h4>Structure — cari subjek &amp; kata kerja</h4>
+            <p>Setiap kalimat wajib punya subjek dan kata kerja utama. Cek kesesuaian subjek–kata kerja, bentuk waktu (tense), dan pola tetap seperti <em>the more … the better</em>.</p>
+          </div>
+          <div class="tip">
+            <h4>Reading — baca soal dulu</h4>
+            <p>Lihat pertanyaan sebelum membaca detail teks. Untuk soal kosakata, ganti kata yang ditanya dengan pilihan jawaban lalu uji mana yang paling masuk akal di kalimat itu.</p>
+          </div>
+        </div>
+
+        <footer>
+          Soal-soal di halaman ini adalah soal latihan yang disusun untuk belajar dan terinspirasi format TOEFL
+          (Listening, Structure &amp; Written Expression, dan Reading seperti pada TOEFL ITP), bukan soal resmi ETS.
+          Cocok sebagai pemanasan sebelum menentukan target tes ITP atau iBT.
+        </footer>
+      </div>
+
+      <!-- ============ QUIZ ============ -->
+      <div id="view-quiz" class="hidden">
+        <div class="quiz-head">
+          <span class="where" id="quiz-where"></span>
+          <span class="count" id="quiz-count"></span>
+          <span class="spacer"></span>
+          <button class="btn secondary" id="btn-exit" type="button">Keluar</button>
+        </div>
+        <div class="progress"><div id="progress-bar" style="width:0%"></div></div>
+        <div class="qcard" id="qcard"></div>
+        <div class="quiz-nav">
+          <button class="btn secondary" id="btn-prev" type="button">Sebelumnya</button>
+          <span class="spacer"></span>
+          <button class="btn" id="btn-next" type="button">Soal Berikutnya</button>
+        </div>
+      </div>
+
+      <!-- ============ RESULTS ============ -->
+      <div id="view-result" class="hidden">
+        <div class="score-box">
+          <div class="score-big" id="score-big">0/0</div>
+          <p id="score-msg"></p>
+          <div class="breakdown" id="score-breakdown"></div>
+          <div class="quiz-nav" style="justify-content:center; margin-top:24px;">
+            <button class="btn" id="btn-retry" type="button">Ulangi Paket Ini</button>
+            <button class="btn secondary" id="btn-home" type="button">Pilih Bagian Lain</button>
+          </div>
+        </div>
+        <h2 class="section-title">Review &amp; Pembahasan</h2>
+        <p class="section-sub">Jawabanmu dibandingkan dengan kunci, lengkap dengan penjelasannya.</p>
+        <div id="review-list"></div>
+      </div>
+
+    </div>
+
+    <script>
+      "use strict";
+
+      var SECTION_NAMES = {
+        listening: "Listening Comprehension",
+        structure: "Structure & Written Expression",
+        reading: "Reading Comprehension"
+      };
+
+      var PASSAGE_BEE = {
+        title: "Passage 1 — The Honeybee Colony",
+        html: "<p>A honeybee colony is a highly organized society. A single colony may contain as many as 60,000 bees, most of which are female workers. The workers perform every task necessary for the survival of the colony: they gather nectar and pollen, build and repair the honeycomb, guard the entrance, and feed the young.</p>" +
+              "<p>At the center of the colony is the queen, whose main role is to lay eggs — up to 2,000 a day during the peak season. Communication is crucial to the colony's success. When a worker finds a rich source of flowers, she returns to the hive and performs a \"waggle dance\" that tells the other bees the direction and distance of the food source. Remarkably, the angle of the dance in relation to the sun indicates the direction the other bees should fly.</p>"
+      };
+
+      var PASSAGE_COFFEE = {
+        title: "Passage 2 — The Spread of Coffee",
+        html: "<p>Coffee was first cultivated on the Arabian Peninsula in the 15th century. From there, it spread to Persia, Egypt, and the Ottoman Empire, where coffeehouses became important centers of social life. People gathered in coffeehouses not only to drink coffee but also to listen to music, play chess, and exchange news; for this reason, coffeehouses were sometimes called \"schools of the wise.\"</p>" +
+              "<p>In the 17th century, coffee reached Europe. At first, some Europeans viewed the dark drink with suspicion, but its popularity grew quickly, and coffeehouses opened in major cities such as London, Paris, and Vienna. By the 18th century, coffee plants had been carried to the Americas, where vast plantations were established. Today, coffee is one of the most widely traded products in the world.</p>"
+      };
+
+      var QUESTIONS = [
+        /* ================= LISTENING ================= */
+        {
+          section: "listening",
+          audio: "Woman: I was hoping to register for the biology seminar, but I heard it is already full. Man: You should check with the department office. They sometimes open a few extra seats.",
+          q: "What does the man suggest the woman do?",
+          options: [
+            "Register for a different seminar",
+            "Ask the department office about extra seats",
+            "Wait until next semester to take the seminar",
+            "Borrow notes from a classmate"
+          ],
+          answer: 1,
+          explain: "Pria itu berkata \"You should check with the department office. They sometimes open a few extra seats.\" Kata kunci should (sebaiknya) menandakan saran, dan extra seats adalah inti sarannya: tanyakan ke kantor departemen apakah ada kursi tambahan."
+        },
+        {
+          section: "listening",
+          audio: "Man: Remember, the library closes at nine tonight instead of midnight. Woman: Then we had better finish this report before dinner.",
+          q: "What will the speakers probably do?",
+          options: [
+            "Study at the library until midnight",
+            "Finish their report before dinner",
+            "Have dinner at the library",
+            "Return their books at nine o'clock"
+          ],
+          answer: 1,
+          explain: "\"Had better\" berarti \"sebaiknya\". Karena perpustakaan tutup pukul sembilan (lebih awal dari biasanya), wanita itu menyimpulkan mereka sebaiknya menyelesaikan laporan sebelum makan malam — itulah yang kemungkinan besar akan mereka lakukan."
+        },
+        {
+          section: "listening",
+          audio: "Woman: Do you know whether Professor Hart accepts late papers? Man: He does, but he takes off ten percent for each day the paper is late.",
+          q: "What does the man imply about Professor Hart's policy?",
+          options: [
+            "Late papers are never accepted",
+            "Late papers lose ten percent for each day of delay",
+            "Students must ask permission before submitting late work",
+            "The deadline has been extended by ten days"
+          ],
+          answer: 1,
+          explain: "\"Takes off ten percent for each day late\" artinya nilai dikurangi 10% untuk setiap hari keterlambatan. Jadi makalah terlambat tetap diterima, tetapi ada penalti nilai per hari — bukan diperpanjang batas waktunya."
+        },
+        {
+          section: "listening",
+          audio: "Man: I cannot believe the train was delayed again. Woman: Well, at least we still have twenty minutes before the lecture begins.",
+          q: "What can be inferred from the conversation?",
+          options: [
+            "The speakers will certainly miss the lecture",
+            "The lecture has already started",
+            "The speakers can probably still arrive on time",
+            "The train is never delayed"
+          ],
+          answer: 2,
+          explain: "Kata \"at least\" (setidaknya) dan \"we still have twenty minutes\" menunjukkan sisi positifnya: masih ada sisa waktu 20 menit sebelum kuliah mulai, jadi mereka kemungkinan masih bisa tiba tepat waktu meski kereta terlambat."
+        },
+        {
+          section: "listening",
+          audio: "Woman: Have you sent in your scholarship application yet? Man: Almost. I just need one more thing, a recommendation letter from Doctor Lee.",
+          q: "What does the man still need to complete his application?",
+          options: [
+            "A copy of his academic transcript",
+            "A letter of recommendation",
+            "A recent photograph of himself",
+            "An application fee"
+          ],
+          answer: 1,
+          explain: "Pria itu menjawab \"Almost\" (hampir selesai) dan menyebutkan satu hal yang masih kurang: \"a recommendation letter from Doctor Lee\" — surat rekomendasi. Pilihan lain tidak disebut sama sekali dalam percakapan."
+        },
+        {
+          section: "listening",
+          audio: "Announcement: Attention, students. The university gymnasium will be closed for repairs starting Monday, June third. The work is expected to last two weeks, and the gym will reopen on Monday, June seventeenth. During the closure, students may use the outdoor sports field free of charge.",
+          q: "When will the gymnasium reopen?",
+          options: ["June 3", "June 10", "June 17", "June 27"],
+          answer: 2,
+          explain: "Pengumuman menyebut penutupan mulai Senin, 3 Juni, perbaikan berlangsung dua minggu, dan gymnasium \"will reopen on Monday, June seventeenth\" — dibuka kembali 17 Juni. Tanggal 3 Juni adalah jebakan: itu tanggal mulai ditutup, bukan dibuka."
+        },
+        {
+          section: "listening",
+          audio: "Man: The forecast says it will rain all weekend. Woman: So much for our picnic plans, then.",
+          q: "What will the speakers most likely do?",
+          options: [
+            "Hold the picnic indoors instead",
+            "Cancel or postpone the picnic",
+            "Check the forecast again on Monday",
+            "Buy umbrellas for the picnic"
+          ],
+          answer: 1,
+          explain: "\"So much for our picnic plans\" adalah ungkapan idiomatik yang berarti \"rencana piknik kita batal\". Karena ramalan cuaca hujan sepanjang akhir pekan, mereka kemungkinan besar membatalkan atau menunda pikniknya."
+        },
+        {
+          section: "listening",
+          audio: "Man: The campus bookstore was completely out of the economics textbook. Woman: Try the shop across from the post office. They had plenty of copies yesterday.",
+          q: "What does the woman suggest the man do?",
+          options: [
+            "Order the textbook online",
+            "Ask the professor for a copy",
+            "Look for the book at another shop",
+            "Wait until the bookstore restocks"
+          ],
+          answer: 2,
+          explain: "Wanita itu menyarankan \"Try the shop across from the post office\" karena toko itu kemarin masih punya banyak stok (\"plenty of copies\"). Jadi sarannya adalah mencari buku di toko lain, bukan menunggu atau memesan daring."
+        },
+
+        /* ================= STRUCTURE ================= */
+        {
+          section: "structure",
+          q: "The committee ___ its decision until all the evidence had been reviewed.",
+          options: ["postponed", "postpone", "postponing", "postpones"],
+          answer: 0,
+          explain: "Klausa \"had been reviewed\" memakai past perfect, jadi peristiwa utamanya juga terjadi di masa lampau. Bentuk yang tepat adalah past tense: postponed. \"Postpone\" dan \"postpones\" adalah present tense, sedangkan \"postponing\" tidak bisa berdiri sendiri tanpa kata kerja bantu."
+        },
+        {
+          section: "structure",
+          q: "Neither the students nor the instructor ___ aware of the schedule change.",
+          options: ["was", "were", "are", "have been"],
+          answer: 0,
+          explain: "Pada pola neither … nor …, kata kerja mengikuti subjek yang paling dekat dengannya, yaitu \"the instructor\" (tunggal), dan konteksnya lampau. Jadi bentuk yang benar adalah was. Aturan kedekatan (proximity rule) ini sering keluar di TOEFL."
+        },
+        {
+          section: "structure",
+          q: "The more you practice, ___ your pronunciation will become.",
+          options: ["the better", "better", "the best", "most better"],
+          answer: 0,
+          explain: "Pola perbandingan berbanding lurus dalam bahasa Inggris adalah \"the + comparative …, the + comparative …\" (semakin …, semakin …). Karena klausa pertama sudah memakai \"The more\", klausa kedua wajib diawali the better."
+        },
+        {
+          section: "structure",
+          q: "By the time we arrived at the cinema, the movie ___.",
+          options: ["had already started", "already starts", "has start", "will start"],
+          answer: 0,
+          explain: "\"By the time we arrived\" menandai dua peristiwa lampau berurutan: film mulai lebih dulu, baru mereka tiba. Peristiwa yang terjadi lebih awal memakai past perfect: had already started."
+        },
+        {
+          section: "structure",
+          q: "She is one of the few researchers who ___ published in international journals.",
+          options: ["has", "have", "is", "was"],
+          answer: 1,
+          explain: "Kata \"who\" di sini merujuk pada \"researchers\" (jamak), bukan pada \"she\". Karena itu kata kerjanya harus jamak: have published. Ini jebakan klasik — jangan terkecoh subjek utama kalimat."
+        },
+        {
+          section: "structure",
+          q: "If ___ carefully, the machine will operate properly for years.",
+          options: ["maintain", "maintained", "maintaining", "maintains"],
+          answer: 1,
+          explain: "Ini bentuk ringkas (reduced) dari klausa if pasif: \"If it is maintained carefully …\". Subjeknya (the machine) dikenai pekerjaan, jadi yang dibutuhkan bentuk past participle: maintained."
+        },
+        {
+          section: "structure",
+          q: "The professor asked the students ___ their assignments by Friday.",
+          options: ["to submit", "submit", "submitting", "submitted"],
+          answer: 0,
+          explain: "Pola kata kerja ask adalah ask + objek + to-infinitive (ask someone to do something). Jadi setelah \"the students\" harus diikuti to submit. Pola ini sama dengan tell, want, dan advise + objek."
+        },
+        {
+          section: "structure",
+          q: "Rarely ___ such a spectacular sunset in this coastal city.",
+          options: ["have I seen", "I have seen", "I saw", "seen I have"],
+          answer: 0,
+          explain: "Kalimat yang diawali kata keterangan negatif/terbatas seperti rarely, seldom, never, dan hardly wajib memakai inversi: kata kerja bantu pindah ke depan subjek — have I seen, bukan I have seen."
+        },
+        {
+          section: "structure",
+          q: "The new bridge, ___ was completed last year, connects the two islands.",
+          options: ["which", "who", "where", "what"],
+          answer: 0,
+          explain: "Kata ganti relatif untuk benda adalah which (atau that, tetapi that tidak dipakai setelah tanda koma pada klausa non-restrictive). Who untuk orang, where untuk tempat sebagai keterangan, dan what tidak bisa mengisi posisi ini."
+        },
+        {
+          section: "structure",
+          q: "Andi drives ___ than his older brother does.",
+          options: ["more carefully", "more careful", "most carefully", "careful"],
+          answer: 0,
+          explain: "Yang dibandingkan adalah cara mengemudi (kata keterangan/adverb), dan kata \"than\" menandakan comparative. Adverb berakhiran -ly membentuk comparative dengan more: more carefully. \"Careful\" adalah adjective, jadi salah di sini."
+        },
+        {
+          section: "structure",
+          qtype: "written",
+          q: "The number of students who takes the bus to campus has increased steadily this year.",
+          sub: "Tentukan bagian kalimat yang salah secara gramatikal.",
+          options: ["who takes the bus", "to campus", "has increased", "steadily this year"],
+          answer: 0,
+          explain: "Bagian yang salah adalah \"who takes the bus\": who merujuk pada \"students\" (jamak), jadi kata kerjanya harus take, bukan takes. Perhatikan, \"has increased\" justru benar karena subjek utamanya adalah \"the number\" (tunggal)."
+        },
+        {
+          section: "structure",
+          qtype: "written",
+          q: "Despite of the heavy rain, the outdoor concert was held as scheduled last night.",
+          sub: "Tentukan bagian kalimat yang salah secara gramatikal.",
+          options: ["Despite of", "the heavy rain", "was held", "as scheduled"],
+          answer: 0,
+          explain: "\"Despite\" tidak pernah diikuti \"of\" — bentuk yang benar adalah Despite the heavy rain … atau In spite of the heavy rain …. Pasangan despite / in spite of ini termasuk kesalahan yang paling sering diujikan."
+        },
+
+        /* ================= READING ================= */
+        {
+          section: "reading",
+          passage: PASSAGE_BEE,
+          q: "What is the main idea of the passage?",
+          options: [
+            "How honeybees produce honey",
+            "The organization and communication of a bee colony",
+            "Why the queen bee lays so many eggs",
+            "The dangers that threaten honeybee colonies"
+          ],
+          answer: 1,
+          explain: "Seluruh teks membahas dua hal besar: pembagian tugas dalam koloni (organisasi) dan waggle dance (komunikasi). Pilihan lain hanya menyentuh satu detail kecil atau tidak dibahas sama sekali, jadi tidak bisa menjadi ide pokok."
+        },
+        {
+          section: "reading",
+          passage: PASSAGE_BEE,
+          q: "According to the passage, the worker bees do all of the following EXCEPT ___",
+          options: [
+            "gather nectar and pollen",
+            "guard the entrance of the hive",
+            "lay eggs for the colony",
+            "feed the young bees"
+          ],
+          answer: 2,
+          explain: "Soal EXCEPT menuntut kita mencari yang TIDAK dilakukan pekerja. Teks menyebut pekerja mengumpulkan nektar, menjaga pintu masuk, dan memberi makan anak lebah. Yang bertugas bertelur adalah ratu (\"the queen, whose main role is to lay eggs\"), bukan pekerja."
+        },
+        {
+          section: "reading",
+          passage: PASSAGE_BEE,
+          q: "The word \"crucial\" in the passage is closest in meaning to ___",
+          options: ["difficult", "essential", "surprising", "temporary"],
+          answer: 1,
+          explain: "\"Crucial\" berarti sangat penting / menentukan. Kalimatnya berbunyi \"Communication is crucial to the colony's success\" — komunikasi sangat menentukan keberhasilan koloni, jadi sinonim terdekatnya adalah essential (penting sekali)."
+        },
+        {
+          section: "reading",
+          passage: PASSAGE_BEE,
+          q: "What does the waggle dance communicate to other bees?",
+          options: [
+            "The time when flowers will bloom",
+            "The direction and distance of a food source",
+            "The amount of nectar inside the hive",
+            "The location of the queen"
+          ],
+          answer: 1,
+          explain: "Teks menyatakan secara eksplisit: tarian itu \"tells the other bees the direction and distance of the food source\" — arah dan jarak sumber makanan. Untuk soal detail seperti ini, jawaban selalu bisa ditemukan kata-katanya di dalam teks."
+        },
+        {
+          section: "reading",
+          passage: PASSAGE_BEE,
+          q: "It can be inferred from the passage that the direction of the waggle dance depends on ___",
+          options: [
+            "the position of the sun",
+            "the size of the colony",
+            "the color of the flowers",
+            "the season of the year"
+          ],
+          answer: 0,
+          explain: "Kalimat terakhir menyebut \"the angle of the dance in relation to the sun indicates the direction\" — sudut tarian dihubungkan dengan posisi matahari. Jadi arah tarian bergantung pada posisi matahari, meski tidak dinyatakan dengan kalimat sebab-akibat langsung."
+        },
+        {
+          section: "reading",
+          passage: PASSAGE_COFFEE,
+          q: "What is the main purpose of the passage?",
+          options: [
+            "To describe how coffee spread around the world",
+            "To explain how coffee plants are cultivated",
+            "To compare coffee with other popular drinks",
+            "To argue that coffee is good for health"
+          ],
+          answer: 0,
+          explain: "Teks bergerak mengikuti perjalanan kopi: Jazirah Arab → Persia & Mesir → Eropa → Amerika. Urutan kronologis penyebaran inilah tujuan utama teks; cara budidaya, perbandingan minuman, dan manfaat kesehatan tidak dibahas."
+        },
+        {
+          section: "reading",
+          passage: PASSAGE_COFFEE,
+          q: "Why were coffeehouses in the Ottoman Empire called \"schools of the wise\"?",
+          options: [
+            "Children were taught lessons there",
+            "People exchanged news and ideas there",
+            "Coffee beans were sold at low prices there",
+            "Only scholars were allowed to enter"
+          ],
+          answer: 1,
+          explain: "Teks menjelaskan orang berkumpul di kedai kopi untuk \"listen to music, play chess, and exchange news\" — bertukar kabar dan gagasanlah yang membuat kedai kopi dijuluki \"schools of the wise\" (sekolahnya orang bijak)."
+        },
+        {
+          section: "reading",
+          passage: PASSAGE_COFFEE,
+          q: "According to the passage, coffee reached Europe in the ___",
+          options: ["15th century", "16th century", "17th century", "18th century"],
+          answer: 2,
+          explain: "Paragraf kedua dibuka dengan \"In the 17th century, coffee reached Europe.\" Abad ke-18 adalah jebakan — itu waktu kopi tiba di Amerika, sedangkan abad ke-15 adalah awal budidaya di Jazirah Arab."
+        },
+        {
+          section: "reading",
+          passage: PASSAGE_COFFEE,
+          q: "The word \"suspicion\" in the passage is closest in meaning to ___",
+          options: ["distrust", "excitement", "admiration", "confusion"],
+          answer: 0,
+          explain: "\"Suspicion\" berarti kecurigaan / rasa tidak percaya. Konteksnya: sebagian orang Eropa awalnya memandang minuman hitam itu dengan curiga sebelum akhirnya populer. Sinonim terdekatnya adalah distrust."
+        },
+        {
+          section: "reading",
+          passage: PASSAGE_COFFEE,
+          q: "It can be inferred from the passage that coffeehouses in the Ottoman Empire ___",
+          options: [
+            "were only places for drinking coffee quickly",
+            "functioned as social and intellectual centers",
+            "were built mainly inside schools",
+            "sold coffee beans to European traders"
+          ],
+          answer: 1,
+          explain: "Teks menyebut kedai kopi sebagai \"important centers of social life\" tempat orang bertukar berita dan bermain catur — jadi fungsinya adalah pusat sosial dan intelektual, jauh melampaui sekadar tempat minum kopi."
+        }
+      ];
+
+      /* ================= Quiz engine ================= */
+      var viewHome = document.getElementById("view-home");
+      var viewQuiz = document.getElementById("view-quiz");
+      var viewResult = document.getElementById("view-result");
+      var qcard = document.getElementById("qcard");
+      var quizWhere = document.getElementById("quiz-where");
+      var quizCount = document.getElementById("quiz-count");
+      var progressBar = document.getElementById("progress-bar");
+      var btnPrev = document.getElementById("btn-prev");
+      var btnNext = document.getElementById("btn-next");
+      var LETTERS = ["A", "B", "C", "D"];
+
+      var state = { list: [], idx: 0, mode: "latihan", title: "", answers: [] };
+
+      function shuffle(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var t = a[i]; a[i] = a[j]; a[j] = t;
+        }
+        return a;
+      }
+
+      function startQuiz(kind) {
+        stopAudio();
+        var list, title, mode;
+        if (kind === "simulasi") {
+          list = shuffle(QUESTIONS);
+          title = "Simulasi Campuran";
+          mode = "simulasi";
+        } else {
+          list = QUESTIONS.filter(function (q) { return q.section === kind; });
+          title = SECTION_NAMES[kind];
+          mode = "latihan";
+        }
+        state = {
+          list: list, idx: 0, mode: mode, title: title,
+          answers: list.map(function () { return -1; })
+        };
+        viewHome.classList.add("hidden");
+        viewResult.classList.add("hidden");
+        viewQuiz.classList.remove("hidden");
+        renderQuestion();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function currentAnswered() { return state.answers[state.idx] !== -1; }
+
+      function renderQuestion() {
+        var q = state.list[state.idx];
+        var total = state.list.length;
+        quizWhere.textContent = state.mode === "simulasi"
+          ? state.title + " — " + SECTION_NAMES[q.section]
+          : state.title;
+        quizCount.textContent = "Soal " + (state.idx + 1) + " dari " + total;
+        progressBar.style.width = Math.round(((state.idx) / total) * 100) + "%";
+
+        var html = "";
+        if (q.passage) {
+          html += '<div class="passage"><div class="passage-title">' + q.passage.title + "</div>" + q.passage.html + "</div>";
+        }
+        if (q.audio) {
+          html += '<div class="audio-row">' +
+                    '<button class="btn" type="button" id="btn-audio">▶ Putar Audio</button>' +
+                    '<span class="audio-note">Dengarkan percakapannya, lalu jawab pertanyaannya. Transkrip muncul setelah kamu menjawab.</span>' +
+                  "</div>" +
+                  '<div class="transcript" id="transcript"><strong>Transkrip</strong>' + escapeHtml(q.audio) + "</div>";
+        }
+        html += '<p class="qtext">' + formatQuestion(q.q) + "</p>";
+        if (q.sub) html += '<p class="qsub">' + escapeHtml(q.sub) + "</p>";
+        html += '<div class="options" id="options">';
+        q.options.forEach(function (opt, i) {
+          html += '<button class="opt" type="button" data-i="' + i + '">' +
+                    '<span class="letter">' + LETTERS[i] + "</span><span>" + escapeHtml(opt) + "</span>" +
+                  "</button>";
+        });
+        html += "</div>";
+        html += '<div class="feedback" id="feedback" aria-live="polite"></div>';
+        qcard.innerHTML = html;
+
+        var audioBtn = document.getElementById("btn-audio");
+        if (audioBtn) audioBtn.addEventListener("click", function () { playAudio(q.audio); });
+
+        var opts = qcard.querySelectorAll(".opt");
+        opts.forEach(function (el) {
+          el.addEventListener("click", function () {
+            chooseAnswer(parseInt(el.getAttribute("data-i"), 10));
+          });
+        });
+
+        paintState();
+        btnPrev.disabled = state.idx === 0;
+        updateNextLabel();
+      }
+
+      function formatQuestion(text) {
+        return escapeHtml(text).replace(/___/g, '<span class="blank"></span>');
+      }
+
+      function escapeHtml(s) {
+        return String(s)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
+      function chooseAnswer(i) {
+        var q = state.list[state.idx];
+        if (state.mode === "latihan" && currentAnswered()) return;
+        state.answers[state.idx] = i;
+        paintState();
+        updateNextLabel();
+      }
+
+      function paintState() {
+        var q = state.list[state.idx];
+        var chosen = state.answers[state.idx];
+        var revealed = state.mode === "latihan" && chosen !== -1;
+        var opts = qcard.querySelectorAll(".opt");
+        opts.forEach(function (el, i) {
+          el.classList.remove("selected", "correct", "wrong");
+          el.disabled = revealed;
+          if (revealed) {
+            if (i === q.answer) el.classList.add("correct");
+            else if (i === chosen) el.classList.add("wrong");
+          } else if (i === chosen) {
+            el.classList.add("selected");
+          }
+        });
+        var fb = document.getElementById("feedback");
+        if (fb) {
+          if (revealed) {
+            var ok = chosen === q.answer;
+            fb.className = "feedback show " + (ok ? "ok" : "no");
+            fb.innerHTML = '<div class="verdict">' + (ok ? "Benar!" : "Belum tepat — jawaban yang benar: " + LETTERS[q.answer]) + "</div><p>" + escapeHtml(q.explain) + "</p>";
+          } else {
+            fb.className = "feedback";
+            fb.innerHTML = "";
+          }
+        }
+        var tr = document.getElementById("transcript");
+        if (tr) tr.classList.toggle("show", revealed);
+      }
+
+      function updateNextLabel() {
+        var last = state.idx === state.list.length - 1;
+        btnNext.textContent = last ? "Selesai & Lihat Hasil" : "Soal Berikutnya";
+      }
+
+      function nextQuestion() {
+        stopAudio();
+        if (state.idx < state.list.length - 1) {
+          state.idx++;
+          renderQuestion();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          showResults();
+        }
+      }
+
+      function prevQuestion() {
+        stopAudio();
+        if (state.idx > 0) {
+          state.idx--;
+          renderQuestion();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }
+
+      function showResults() {
+        var total = state.list.length;
+        var correct = 0;
+        var per = { listening: [0, 0], structure: [0, 0], reading: [0, 0] };
+        state.list.forEach(function (q, i) {
+          per[q.section][1]++;
+          if (state.answers[i] === q.answer) { correct++; per[q.section][0]++; }
+        });
+        progressBar.style.width = "100%";
+
+        document.getElementById("score-big").textContent = correct + "/" + total;
+        var pct = total ? Math.round((correct / total) * 100) : 0;
+        var msg;
+        if (pct >= 85) msg = "Luar biasa! Pemahamanmu sudah sangat kuat — pertahankan dengan latihan rutin.";
+        else if (pct >= 65) msg = "Bagus! Fondasimu sudah terbentuk. Pelajari lagi pembahasan soal yang meleset di bawah ini.";
+        else if (pct >= 40) msg = "Cukup baik untuk awal. Fokuskan belajar pada bagian dengan skor terendah, lalu coba lagi.";
+        else msg = "Tidak apa-apa — semua orang mulai dari sini. Baca pembahasan tiap soal di bawah, lalu ulangi paketnya.";
+        document.getElementById("score-msg").textContent =
+          "Kamu menjawab benar " + correct + " dari " + total + " soal (" + pct + "%). " + msg;
+
+        var bd = document.getElementById("score-breakdown");
+        bd.innerHTML = "";
+        Object.keys(per).forEach(function (key) {
+          if (per[key][1] === 0) return;
+          var chip = document.createElement("span");
+          chip.className = "chip";
+          chip.textContent = SECTION_NAMES[key] + ": " + per[key][0] + "/" + per[key][1];
+          bd.appendChild(chip);
+        });
+
+        var rl = document.getElementById("review-list");
+        rl.innerHTML = "";
+        state.list.forEach(function (q, i) {
+          var chosen = state.answers[i];
+          var ok = chosen === q.answer;
+          var item = document.createElement("div");
+          item.className = "review-item";
+          var yours = chosen === -1
+            ? '<div class="ra yours-wrong"><span class="lbl">Jawabanmu:</span> (tidak dijawab)</div>'
+            : '<div class="ra ' + (ok ? "right" : "yours-wrong") + '"><span class="lbl">Jawabanmu:</span> ' +
+              LETTERS[chosen] + ". " + escapeHtml(q.options[chosen]) + (ok ? " ✓" : " ✗") + "</div>";
+          item.innerHTML =
+            '<div class="rsec">' + SECTION_NAMES[q.section] + " · Soal " + (i + 1) + "</div>" +
+            '<p class="rq">' + formatQuestion(q.q) + "</p>" +
+            yours +
+            '<div class="ra right"><span class="lbl">Kunci:</span> ' + LETTERS[q.answer] + ". " + escapeHtml(q.options[q.answer]) + "</div>" +
+            '<p class="rex"><strong>Pembahasan:</strong> ' + escapeHtml(q.explain) + "</p>";
+          rl.appendChild(item);
+        });
+
+        viewQuiz.classList.add("hidden");
+        viewResult.classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      /* ---------- Audio (suara perangkat) ---------- */
+      function playAudio(text) {
+        if (!("speechSynthesis" in window)) {
+          var tr = document.getElementById("transcript");
+          if (tr) tr.classList.add("show");
+          return;
+        }
+        window.speechSynthesis.cancel();
+        var utter = new SpeechSynthesisUtterance(text.replace(/^(Woman|Man|Announcement):/, ""));
+        utter.lang = "en-US";
+        utter.rate = 0.95;
+        var voices = window.speechSynthesis.getVoices();
+        for (var i = 0; i < voices.length; i++) {
+          if (voices[i].lang && voices[i].lang.indexOf("en") === 0) { utter.voice = voices[i]; break; }
+        }
+        window.speechSynthesis.speak(utter);
+      }
+      function stopAudio() {
+        if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+      }
+      if ("speechSynthesis" in window) window.speechSynthesis.getVoices();
+
+      /* ---------- Wiring ---------- */
+      document.querySelectorAll("[data-start]").forEach(function (btn) {
+        btn.addEventListener("click", function () { startQuiz(btn.getAttribute("data-start")); });
+      });
+      btnNext.addEventListener("click", nextQuestion);
+      btnPrev.addEventListener("click", prevQuestion);
+      document.getElementById("btn-exit").addEventListener("click", function () {
+        stopAudio();
+        viewQuiz.classList.add("hidden");
+        viewResult.classList.add("hidden");
+        viewHome.classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      document.getElementById("btn-home").addEventListener("click", function () {
+        viewResult.classList.add("hidden");
+        viewHome.classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      document.getElementById("btn-retry").addEventListener("click", function () {
+        state.idx = 0;
+        state.answers = state.list.map(function () { return -1; });
+        viewResult.classList.add("hidden");
+        viewQuiz.classList.remove("hidden");
+        renderQuestion();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
